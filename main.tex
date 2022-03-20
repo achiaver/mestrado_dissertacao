@@ -1,0 +1,23 @@
+\documentclass[a4paper,12pt,oneside,onecolumn,final,fleqn]{config/UERJ/repUERJ}
+
+\input{config/packages}
+\input{config/authorship}
+\input{config/PDF_final_view}
+
+
+\begin{document}
+\citeoption{abnt-options4}
+
+\input{chapters/pre-textual}
+\mainmatter
+% Formas de citar referências neste documento:
+%     \cite{bib:Amado1991} --> (AUTOR, ano)
+%     \citeonline{bib:Amado1991} --> Autor (ano)
+%     \citeauthoronline{bib:Andrade1997} --> Autor
+%     \citeyear{bib:Andrade1997} --> ano
+%     \citeauthor{bib:Andrade1997} --> AUTOR
+
+\input{templates/chapters}
+
+\input{chapters/pos-textual}
+\end{document}

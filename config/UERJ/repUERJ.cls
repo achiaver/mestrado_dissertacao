@@ -4,7 +4,7 @@
 % 2. consertar o problema de sublinar subsecoes com \uline
 
 \NeedsTeXFormat{LaTeX2e}[1995/12/01]
-\ProvidesClass{repUERJ}[2013/06/01 v7.0]
+\ProvidesClass{config/UERJ/repUERJ}[2013/06/01 v7.0]
 
 \RequirePackage{ifthen}
 \RequirePackage[normalem]{ulem}

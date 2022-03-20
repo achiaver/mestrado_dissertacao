@@ -1,0 +1,55 @@
+% ---------------------------------------------------------------
+% ---------------------------------------------------------------
+% Modelo de Trabalho Acadêmico utilizando classe repUERJ para
+% elaboração de teses, dissertação e trabalhos monográficos em
+% geral.
+%
+% Este arquivo está editado na codificação de caracteres UTF-8.
+%
+% As referencias estão baseadas no modelo bibtex e citação em
+% autor-data
+%
+% Este modelo foi criado por 
+% 	Dr. Luís Fernando de Oliveira
+% 	Professor Adjunto do Dep. de Física Aplicada e Termodinâmica
+% 	Instituto de Física Armando Dias Tavares
+% 	Universidade do Estado do Rio de Janeiro - UERJ
+%%%%%%%
+%  O modelo original foi criado por
+% 	Dr. Luís Fernando de Oliveira
+% 	Professor Adjunto do Dep. de Física Aplicada e Termodinâmica
+% 	Instituto de Física Armando Dias Tavares
+% 	Universidade do Estado do Rio de Janeiro - UERJ
+%
+% A classe repUERJ.cls foi criada a partir do código original 
+% disponibilizado pelo grupo CódigoLivre (coordenado por
+% Gerald Weber). Foram feitas adequações para implementação das 
+% normas de elaboração de teses e dissertações da UERJ.
+%
+% Os estilos repUERJformat.sty codificam os elementos
+% pré-textuais e pós-textuais.
+%
+% O estilo repUERJpseudocode.sty codifica a elaboração de
+% algoritmos utilizando um glossário desenvolvido por mim 
+% (Luís Fernando), o mesmo usado em meu curso de Física
+% Computacional.
+%
+% Todo este material está disponível também no meu site
+%      http://sites.google.com/site/deoliveiralf
+%
+% As normas da UERJ para elaboração de teses e dissertações 
+% pode ser obtidas no documento disponível no site
+%      http://www.bdtd.uerj.br/roteiro_uerj_web.pdf
+%
+% Agradecimentos ao NPROTEC/Rede Sirius/UERJ e à Biblioteca
+% Setorial da Física.
+
+% A presente versão é uma atualização e adaptação para as teses 
+% e dissertações desenvolvidas no 
+% Programa de Pós-Graduação em Ciências Computacionais (PPG-CCOMP) 
+% Instituto de Matemática e Estatística - IME/UERJ
+% a cargo da M.Sc. Michelle Lau.
+%
+% Modelo adaptado para o Programa de Pós-Graduação em Ciências Computacionais.
+% ---------------------------------------------------------------
+% ---------------------------------------------------------------

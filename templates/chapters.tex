@@ -1,0 +1,261 @@
+
+
+
+
+%================================================================
+\chapter*{Introdução} % Não deve ser numerado.
+%================================================================
+
+No âmbito da comunidade acadêmica, a importância de estabelecer diretrizes, padrões e normas que constituem uma ação fundamental para garantir a localização e a recuperação do conhecimento produzido é reconhecida principalmente por ser a Universidade locus permanente de produção científica~\cite{bib:roteiro}.
+
+As teses e dissertações da Universidade do Estado do Rio de Janeiro, destacam-se pela qualidade do conteúdo e pela estrutura da apresentação. Organizar essa estrutura e padronizar a apresentação são processos que dependem de atualização constante devido às novas Tecnologias de Informação e Comunicação (TICs), da produção de informação que utiliza esses recursos e, também, das normas da Associação Brasileira de Normas Técnicas (ABNT)~\cite{bib:roteiro}.
+
+Este modelo tem por objetivo padronizar os trabalhos realizados no Programa de Pós-Graduação em Ciências Computacionais (PPG-CCOMP). O modelo utilizado foi criado por Dr. Luís Fernando de Oliveira, professor adjunto do Dep. de Física Aplicada e Termodinâmica da Universidade do Estado do Rio de Janeiro e, adaptado para os cursos de Mestrado e Doutorado do PPG-CCOMP por M.Sc. Michelle Lau.
+
+Foram introduzidas algumas regras gerais para apresentação no próximo capítulo. Para mais detalhes sobre a apresentação, consultar o Roteiro para apresentação das teses e dissertações da Universidade do Estado do Rio de Janeiro através do link: \url{http://www.bdtd.uerj.br/roteiro_uerj_web.pdf}.
+
+
+%================================================================
+\chapter{Regras Gerais de Apresentação}
+%================================================================
+
+São as regras que definem como a parte gráfica do documento
+deve ser apresentada, incluindo as ilustrações, as equações e as abreviaturas e siglas que porventura existam.
+
+
+%----------------------------------------------------------------
+\section{Abreviaturas e siglas}
+%----------------------------------------------------------------
+
+São utilizadas com o objetivo de se evitar a repetição de palavras ou de expressões que aparecem com frequência no texto. Quando as abreviaturas ou siglas forem citadas no texto pela primeira vez, devem aparecer entre parênteses após o seu significado por extenso.
+
+\textbf{Exemplo:} A Universidade do Estado do Rio de Janeiro (UERJ) integra o consórcio da Biblioteca Digital Brasileira de Teses e Dissertações (BDTD). Assim, a UERJ faz parte da BDTD nacional, coordenada pelo Instituto Brasileiro de Informação em Ciência e Tecnologia (IBICT).
+
+
+%----------------------------------------------------------------
+\section{Equações e fórmulas}
+%----------------------------------------------------------------
+
+As equações e fórmulas devem aparecer destacadas no texto, alinhadas na margem esquerda, numeradas em algarismos arábicos, estes
+alinhados na margem direita e entre parênteses. 
+
+Alguns exemplos usando ambientes para inserir equações matemáticas:
+
+\begin{align}
+    & X_{t+1} = kx_t\left(1-x_t\right) \notag \\
+    & E = mc^2\\
+    & F = G \dfrac{m_1 m_2}{d^2}
+\end{align}
+
+\begin{gather}
+    f(x)=\left\{\begin{aligned}
+    & y_{ij} = 0\\
+    & x = h + v
+\end{aligned}\right.
+\end{gather}
+
+\begin{equation} 
+    H = - \sum p(x) \log p(x)
+\end{equation}
+
+\begin{equation*}
+    \nabla \times H = \dfrac{1}{c}\dfrac{\partial E}{\partial t},~~ \nabla\cdot H = 0
+\end{equation*}
+
+%----------------------------------------------------------------
+\section{Ilustrações}
+%----------------------------------------------------------------
+
+Têm por objetivo exemplificar e/ou esclarecer o assunto que está
+sendo abordado. Deve-se evitar o uso de ilustrações que não tenham sido objeto do trabalho.
+
+\textbf{Exemplos:}
+
+\begin{verbatim}
+\begin{figure}[htb]{14cm}
+\caption{Aqui entra o título da figura -- deve ser curto e objetivo}
+\label{fig:fig1}
+\fbox{\includegraphics[width=0.45\hsize]{logo_uerj_cinza.png}}%
+\legend{Aqui entra a legenda da figura. Deve ser simples e sucinta
+mas que garanta a compreensão da ilustração.
+Qualquer explicação mais longa deve estar no corpo do texto.}
+\source{Citação da fonte ou `O autor/A autora, ano'.}
+\end{figure}
+\end{verbatim}
+
+O código acima produz a Figura~\ref{fig:fig1}.
+
+\begin{figure}[htb]{14cm}
+\caption{Aqui entra o título da figura -- deve ser curto e objetivo}\label{fig:fig1}
+\fbox{\includegraphics[width=0.45\hsize]{config/UERJ/logo_uerj_cinza.png}}%
+ \legend{Aqui entra a legenda da figura. Deve ser simples e sucinta mas que garanta a compreensão da ilustração.
+Qualquer explicação mais longa deve estar no corpo do texto.}
+\source{Citação da fonte ou `O autor/A autora, ano'.}
+\end{figure}
+
+Com o comando $\backslash$\texttt{subfloat[][]}\{\texttt{...}\} dentro do $\backslash$\texttt{begin}\{\texttt{figure}\}, é possível organizar mais de uma imagem no mesmo título. Cada ``subimagem'' será referenciada com uma letra a começar com \texttt{(a)}. Veja as figuras \ref{subrotulo1}, \ref{subrotulo2} e \ref{subrotulo3}.
+\begin{verbatim}
+\begin{figure}[htb]{16cm}
+  \caption{Apresentações do logo da UERJ.} 
+  \label{outro.rotulo}
+  \subfloat[][]{\label{subrotulo1}%
+    \fbox{\includegraphics[width=0.45\hsize]
+            {logo_uerj_cinza.png}}}\hfill
+  \subfloat[][]{\label{subrotulo2}%
+    \fbox{\includegraphics[width=0.45\hsize]
+            {marcadagua_uerj_cinza.png}}}\\
+  \subfloat[][]{\label{subrotulo3}%
+    \fbox{\includegraphics[width=0.45\hsize]
+            {logo_uerj_cor.jpg}}}\hfill
+  \legend{Logomarca da UERJ em diferentes 
+    apresentações de cor: \subref{subrotulo1} 
+    em tons de cinza (a partir da imagem colorida);
+    \subref{subrotulo2} como marga d'água (a partir 
+    da imagem preto e branco; \subref{subrotulo3} 
+    colorido.}
+  \source{\citeauthor{bib:logomarca}, 
+          \citeyear{bib:logomarca}; 
+          \citeauthor{bib:logomarca}, 
+          \citeyear{bib:logomarca}.}
+\end{figure}
+\end{verbatim}
+
+Não vale a pena brigar com o \LaTeX\ para posicionar a figura onde você quer. Normalmente, o \LaTeX\ colocará a figura na página seguinte, salvo exceções. Isto tem  a ver com a proporção de texto e figura presentes na página. Quando a figura ocupa uma área da página muito superior ao correspondente de texto, o \LaTeX\ deixa a figura isolada em uma nova página como, por exemplo, a Figura~\ref{fig:outro.rotulo}.
+
+\begin{figure}[htb]{16cm}
+  \caption{Apresentações do logo da UERJ.} 
+  \label{fig:outro.rotulo}
+  \subfloat[][]{\label{subrotulo1}%
+    \fbox{\includegraphics[width=0.45\hsize]
+            {config/UERJ/logo_uerj_cinza.png}}}\hfill
+  \subfloat[][]{\label{subrotulo2}%
+    \fbox{\includegraphics[width=0.45\hsize]
+            {config/UERJ/marcadagua_uerj_cinza.png}}}\\
+  \subfloat[][]{\label{subrotulo3}%
+    \fbox{\includegraphics[width=0.45\hsize]
+            {config/UERJ/logo_uerj_cor.jpg}}}\hfill
+  \legend{Logomarca da UERJ em diferentes 
+    apresentações de cor: \subref{subrotulo1} 
+    em tons de cinza (a partir da imagem colorida);
+    \subref{subrotulo2} como marga d'água (a partir 
+    da imagem preto e branco; \subref{subrotulo3} 
+    colorido.}
+  \source{\citeauthor{bib:logomarca}, 
+          \citeyear{bib:logomarca}; 
+          \citeauthor{bib:logomarca}, 
+          \citeyear{bib:logomarca}.}
+\end{figure}
+
+
+
+
+Texto do capítulo. Texto, texto Algoritmo \ref{alg:modelo}. Texto.
+
+\begin{algorithm}[!ht]
+    \caption{Título do algoritmo.} \label{alg:modelo}
+    \begin{pseudocode}
+      \LinhaEmBranco
+      \Documentacao
+        \Titulo{Nome do algoritmo\\}
+        \Proposito{Propósito do algoritmo.\\}
+        \Metodo{Método utilizado no algoritmo.\\}
+        \Entradas{
+          a, m: multiplicador e módulo\\
+          n0: semente\\
+          i: contador auxiliar\\
+        }
+        \Saidas{
+          n: número aleatório\\
+        }
+        \Observacoes{Observações, restrições e requisitos.\\}
+        \Algoritmo{Identificação}
+          \Declarar{$a, m, i$}{numéricos}{}{}
+          \Declarar{$n0, n$}{numéricos}{}{}
+          \Ins{$m \leftarrow 13$}
+          \Ins{$n0 \leftarrow 1$}
+          \ParaDeAtePasso[para cada possível valor de `a']{$a$}{2}{$m-1$}{}
+            \Escrever{``a = '', $a$, ``: n = \{''}
+            \Ins[reinicia a geração com a semente n0]{$n \leftarrow n0$}
+            \ParaDeAtePasso{$i$}{0}{$m-1$}{}
+              \Ins[gerador de números aleatórios]{$n \leftarrow resto(a*n, m)$}
+              \SeEntao[se fim da sequencia ...]{$n == n0$}
+                \Escrever{$n$,``\}''}
+                \Parar
+              \Senao
+                \Escrever{$n$}
+              \FimSe
+            \FimPara
+          \FimPara
+        \Continua
+    \end{pseudocode}
+\end{algorithm}
+
+\alglinenumbersoff
+\begin{algorithm*}[!ht]
+    \caption{Título do algoritmo. (continuação)}
+    \begin{pseudocode*}
+        \LinhaEmBranco
+        \Continuacao
+%          \LinhaEmBranco
+          \Ins{$a \leftarrow 1$}
+          \Enquanto[comentário]{$a<10$}
+            \Escrever{$a$}
+            \Ins{$a \leftarrow a+1$}
+          \FimEnquanto
+          \Ins{$a \leftarrow 1$}
+          \Repetir[comentário]
+            \Escrever{$a$}
+            \Ins{$a \leftarrow a+1$}
+          \AteQue{$a\ge10$}
+          \LinhaEmBranco
+          \Ins{$a \leftarrow 1$}
+          \Fazer[comentário]
+            \Escrever{$a$}
+            \Ins{$a \leftarrow a+1$}
+          \Enquanto{$a<10$}
+        \FimAlgoritmo
+      \FimDocumentacao
+    \end{pseudocode*}
+\end{algorithm*}
+
+\vfill~\\
+
+
+%----------------------------------------------------------------
+\section{Tabelas}
+%----------------------------------------------------------------
+
+Apresentam apenas informações estatísticas. As tabelas seguem as mesmas regras das ilustrações quanto a identificação, apresentação gráfica, localização e disposição.
+
+\begin{table}[htb]{16cm}
+    \caption{\protect Algumas disciplinas do Programa de Pós-Graduação em Ciências Computacionais.}
+    \label{tab:casos_sarampo}
+    \hfill\begin{tabular}{l|c}
+        Disciplina & Grupo \\
+        \hline 
+         Álgebra Linear: Aspectos Teóricos e Computacionais & I\\
+         Algoritmos & I\\
+         Programação Paralela e Distribuída & II\\
+         Probabilidade e Estatística & II\\
+         Redes Neuronais & III\\
+         Visão Computacional & III\\
+         Estudo Dirigido I & IV
+    \end{tabular}\hfill
+    \legend{Algumas das disciplinas ofertadas pelo Programa de Pós-Graduação em Ciências Computacionais e o grupo ao qual pertencem.} 
+    \source{O autor, 2021.}
+\end{table}
+
+
+%----------------------------------------------------------------
+\section{Referências}
+%----------------------------------------------------------------
+
+No arquivo \textit{exemplos.bib} podem-se observar alguns exemplos de como formatar as referências a serem utilizadas no trabalho. 
+
+Para obter mais detalhes, acessar o Roteiro para apresentação das teses e dissertações da Universidade do Estado do Rio de Janeiro através do link: \url{http://www.bdtd.uerj.br/roteiro_uerj_web.pdf}.
+
+%================================================================
+\chapter*{Conclusão} %não deve ser numerado
+%================================================================
+
+Texto da conclusão.

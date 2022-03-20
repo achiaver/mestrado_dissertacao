@@ -1,6 +1,6 @@
 \NeedsTeXFormat{LaTeX2e}
 % desenvolvido por Prof. Luis Fernando de Oliveira IF/UERJ
-\ProvidesPackage{repUERJformat}[2016/08/08 v9.0 repUERJformat.sty]
+\ProvidesPackage{config/UERJ/repUERJformat}[2016/08/08 v9.0 repUERJformat.sty]
 
 \RequirePackage{ifthen}
 \RequirePackage{enumitem}
@@ -79,7 +79,8 @@
 % -----------------------------------------------------------------------
 % -----------------------------------------------------------------------
 
-\RequirePackage[brazil]{babel}
+%\RequirePackage[brazil]{babel}
+\RequirePackage[]{babel}
 \addto\captionsbrazil{%
   \renewcommand\contentsname{Sum\'ario}
   \renewcommand{\listfigurename}{Lista de Figuras}
@@ -193,7 +194,7 @@
   \newcommand{\UERJautornome}{#1}
   \newcommand{\UERJautorsobrenome}{#2}
   \newcommand{\UERJautornomeabvr}{#3}
-  \renewcommand{\UERJautor}{#1 #2}
+  \renewcommand{\UERJautor}{\UERJautornome \UERJautorsobrenome}
 }
 
 % \providecommand{\UERJoautor}{}

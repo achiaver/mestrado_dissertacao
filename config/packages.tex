@@ -1,0 +1,76 @@
+% ---------------------------------------------------------------
+% ---------------------------------------------------------------
+% Packages content
+% ---------------------------------------------------------------
+% ---------------------------------------------------------------
+
+\usepackage[main=brazil,english]{babel}  % adequação para o português Brasil
+\usepackage[utf8]{inputenc} % Determina a codificação utilizada
+                            % (conversão automática dos acentos)
+\usepackage{makeidx}        % Cria o índice
+\usepackage{hyperref}       % Controla a formação do índice
+\usepackage{indentfirst}    % Indenta o primeiro paragrafo de
+                            % cada seção.
+\usepackage{graphicx}       % Inclusão de gráficos
+%\graphicspath{{images/}}
+
+\usepackage{subfig}
+\usepackage{multirow}
+\usepackage{amsmath,amssymb}  % pacotes matemáticos
+\usepackage[alf]{abntex2cite} % pacote para citacoes autor-data
+% \usepackage[num]{abntex2cite} % pacote para citacoes com numeracao
+% \citebrackets[]
+\usepackage{tikz}				    % Awesome drawings
+\usetikzlibrary{calc}               % to get node width and height
+\usetikzlibrary{positioning}        % to use the relative positioning commands
+\usetikzlibrary{arrows.meta}
+\usetikzlibrary{mindmap}
+\usetikzlibrary{shapes.geometric}   % to use diamond shape
+\usetikzlibrary{backgrounds}        % for frames
+\usetikzlibrary{shadows}            % for shadows
+\usetikzlibrary{arrows}
+\usetikzlibrary{decorations.markings}
+\usepackage{tikz-3dplot}
+
+\pdfstringdefDisableCommands{\let\uppercase\relax}
+\pdfstringdefDisableCommands{\let\uline\relax}
+
+%\usepackage[table]{xcolor}
+
+\usepackage[font=default,frame=no]{config/UERJ/repUERJformat} % pacote para as 
+                                                  % normas da UERJ
+% ---
+% pacote auxiliar para elaboração de pseudocódigos
+% este pacote pode ser retirado caso nao se planeje
+% elaborar pseudocódigos
+% ---
+\usepackage[dots=yes]{config/UERJ/repUERJpseudocode}
+
+\usepackage[maxfloats=25]{morefloats}
+\usepackage{array}
+\setlength\extrarowheight{2pt}
+% \usepackage[subrefformat=parens, labelformat=parens]{subfig}
+% \captionsetup[subfigure]{justification=centering}
+% \newcommand{\subfigureautorefname}{\figureautorefname}
+% \newcommand{\lstnumberautorefname}{\figureautorefname}
+
+
+
+% ----------------------------------------------------------------
+% Este trecho de comandos pode ser apagado
+% ----------------------------------------------------------------
+\usepackage[brazilian,hyperpageref]{backref}
+% Configurações do pacote backref
+% Usado sem a opção hyperpageref de backref
+\renewcommand{\backrefpagesname}{Citado na(s) página(s):~}
+% Texto padrão antes do número das páginas
+\renewcommand{\backref}{}
+% Define os textos da citação
+\renewcommand*{\backrefalt}[4]{
+\ifcase #1 %
+Nenhuma citação no texto.%
+\or
+Citado na página #2.%
+\else
+Citado #1 vezes nas páginas #2.%
+\fi}%

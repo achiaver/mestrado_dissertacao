@@ -1,56 +1,6 @@
 % ---------------------------------------------------------------
 % ---------------------------------------------------------------
-% Modelo de Trabalho Acadêmico utilizando classe repUERJ para
-% elaboração de teses, dissertação e trabalhos monográficos em
-% geral.
-%
-% Este arquivo está editado na codificação de caracteres UTF-8.
-%
-% As referencias estão baseadas no modelo bibtex e citação em
-% autor-data
-%
-% Este modelo foi criado por 
-% 	Dr. Luís Fernando de Oliveira
-% 	Professor Adjunto do Dep. de Física Aplicada e Termodinâmica
-% 	Instituto de Física Armando Dias Tavares
-% 	Universidade do Estado do Rio de Janeiro - UERJ
-%%%%%%%
-%  O modelo original foi criado por
-% 	Dr. Luís Fernando de Oliveira
-% 	Professor Adjunto do Dep. de Física Aplicada e Termodinâmica
-% 	Instituto de Física Armando Dias Tavares
-% 	Universidade do Estado do Rio de Janeiro - UERJ
-%
-% A classe repUERJ.cls foi criada a partir do código original 
-% disponibilizado pelo grupo CódigoLivre (coordenado por
-% Gerald Weber). Foram feitas adequações para implementação das 
-% normas de elaboração de teses e dissertações da UERJ.
-%
-% Os estilos repUERJformat.sty codificam os elementos
-% pré-textuais e pós-textuais.
-%
-% O estilo repUERJpseudocode.sty codifica a elaboração de
-% algoritmos utilizando um glossário desenvolvido por mim 
-% (Luís Fernando), o mesmo usado em meu curso de Física
-% Computacional.
-%
-% Todo este material está disponível também no meu site
-%      http://sites.google.com/site/deoliveiralf
-%
-% As normas da UERJ para elaboração de teses e dissertações 
-% pode ser obtidas no documento disponível no site
-%      http://www.bdtd.uerj.br/roteiro_uerj_web.pdf
-%
-% Agradecimentos ao NPROTEC/Rede Sirius/UERJ e à Biblioteca
-% Setorial da Física.
-
-% A presente versão é uma atualização e adaptação para as teses 
-% e dissertações desenvolvidas no 
-% Programa de Pós-Graduação em Ciências Computacionais (PPG-CCOMP) 
-% Instituto de Matemática e Estatística - IME/UERJ
-% a cargo da M.Sc. Michelle Lau.
-%
-% Modelo adaptado para o Programa de Pós-Graduação em Ciências Computacionais.
+% Check out config/disclaimer.tex
 % ---------------------------------------------------------------
 % ---------------------------------------------------------------
 %
@@ -220,6 +170,7 @@ Citado #1 vezes nas páginas #2.%
 
 % ----------------------------------------------------------
 \begin{document}
+\citeoption{abnt-options4}
 % ----------------------------------------------------------
 
 % ----------------------------------------------------------
@@ -455,7 +406,7 @@ O código acima produz a Figura~\ref{fig:fig1}.
 
 \begin{figure}[htb]{14cm}
 \caption{Aqui entra o título da figura -- deve ser curto e objetivo}\label{fig:fig1}
-\fbox{\includegraphics[width=0.45\hsize]{logo_uerj_cinza.png}}%
+\fbox{\includegraphics[width=0.45\hsize]{config/UERJ/logo_uerj_cinza.png}}%
  \legend{Aqui entra a legenda da figura. Deve ser simples e sucinta mas que garanta a compreensão da ilustração.
 Qualquer explicação mais longa deve estar no corpo do texto.}
 \source{Citação da fonte ou `O autor/A autora, ano'.}
@@ -495,13 +446,13 @@ Não vale a pena brigar com o \LaTeX\ para posicionar a figura onde você quer. 
   \label{fig:outro.rotulo}
   \subfloat[][]{\label{subrotulo1}%
     \fbox{\includegraphics[width=0.45\hsize]
-            {logo_uerj_cinza.png}}}\hfill
+            {cofig/UERJ/logo_uerj_cinza.png}}}\hfill
   \subfloat[][]{\label{subrotulo2}%
     \fbox{\includegraphics[width=0.45\hsize]
-            {marcadagua_uerj_cinza.png}}}\\
+            {config/UERJ/marcadagua_uerj_cinza.png}}}\\
   \subfloat[][]{\label{subrotulo3}%
     \fbox{\includegraphics[width=0.45\hsize]
-            {logo_uerj_cor.jpg}}}\hfill
+            {config/UERJ/logo_uerj_cor.jpg}}}\hfill
   \legend{Logomarca da UERJ em diferentes 
     apresentações de cor: \subref{subrotulo1} 
     em tons de cinza (a partir da imagem colorida);

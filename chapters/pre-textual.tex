@@ -1,0 +1,141 @@
+% ----------------------------------------------------------
+% ELEMENTOS PRE-TEXTUAIS
+% ----------------------------------------------------------
+
+\frontmatter % inicia a área dos elementos pré-textuais
+
+% O tipo de documento (tese ou dissertação) deve ser definido após a linha 165
+
+% ----------------------------------------------------------
+% Capa e a folha de rosto
+% ----------------------------------------------------------
+
+\capa
+\folhaderosto
+
+% ----------------------------------------------------------
+% Inserir a ficha catalográfica
+% ----------------------------------------------------------
+
+% A biblioteca deverá providenciar a ficha catalográfica. 
+% Salve a ficha no formato PDF. Use o nome do arquivo PDF 
+% como argumento do comando. 
+% Exemplo: ficha catalográfica no arquivo 'ficha.pdf'
+%     \fichacatalografica{ficha.pdf}
+%
+% Enquanto não possuir a ficha catalográfica, use o comando sem
+% argumentos.
+% ---
+
+\fichacatalografica{}
+
+
+% ----------------------------------------------------------
+% Folha de aprovação
+% ----------------------------------------------------------
+
+\begin{folhadeaprovacao}
+  \assinatura{Cargo Título Nome Completo}
+             {Unidade -- Instituição}
+  \assinatura{Cargo Título Nome Completo}
+             {Unidade -- Instituição}
+  \assinatura{Cargo Título Nome Completo}
+             {Unidade -- Instituição}
+  \assinatura{Cargo Título Nome Completo}
+             {Unidade -- Instituição}
+\end{folhadeaprovacao}
+
+
+% ----------------------------------------------------------
+% Dedicatória
+% ----------------------------------------------------------
+
+\pretextualchapter{Dedicatória}
+\vfill
+Texto da dedicatória (opcional).
+
+
+% ----------------------------------------------------------
+% Agradecimentos
+% ----------------------------------------------------------
+
+\pretextualchapter{Agradecimentos}
+
+Texto de agradecimento (opcional).
+
+
+% ----------------------------------------------------------
+% Epigrafe (opcional)
+% ----------------------------------------------------------
+
+\pretextualchapter{}
+  \vfill
+  \begin{flushright}
+ Pensamento, reflexão (opcional). \\  %citação sem aspas   
+    \textit{autor}
+  \end{flushright}
+
+
+% ----------------------------------------------------------
+% RESUMO
+% ----------------------------------------------------------
+
+\pretextualchapter{Resumo}
+\referencia % linha em branco depois
+
+
+Texto do resumo em português.
+
+
+\imprimirchaves % linha em branco antes
+
+% ----------------------------------------------------------
+% Abstract
+% ----------------------------------------------------------
+
+\pretextualchapter{Abstract}
+\reference % linha em branco depois
+
+
+Texto do resumo em inglês.
+
+
+\printkeys % linha em branco antes
+
+% ----------------------------------------------------------
+% Listas de ilustrações e tabelas
+% ----------------------------------------------------------
+
+\listadefiguras    %\begin{figure}{largura}...\end{figure}
+\listadetabelas    %\begin{table}{largura}...\end{table}
+% \listadegraficos   %\begin{graph}{largura}...\end{graph}
+
+% ----------------------------------------------------------
+% Outras listas
+% ----------------------------------------------------------
+
+\listadealgoritmos % opcional %\begin{algorithm}...\end{algorithm}
+
+% ----------------------------------------------------------
+% Lista de abreviaturas e siglas (opcional)
+% ----------------------------------------------------------
+
+\pretextualchapter{Lista de abreviaturas e siglas}
+    \abreviatura{sigla 1}{por extenso}
+    \abreviatura{sigla 2}{por extenso}
+    \abreviatura{sigla 3}{por extenso}
+
+% ----------------------------------------------------------
+% Lista de simbolos (opcional)
+% ----------------------------------------------------------
+
+\pretextualchapter{Lista de símbolos}
+    \simbolo{$simbolo 1$}{significado e/ou valor}
+    \simbolo{$simbolo 2$}{significado e/ou valor}
+    \simbolo{$simbolo 3$}{significado e/ou valor}
+
+% ----------------------------------------------------------
+% Sumario
+% ----------------------------------------------------------
+
+\sumario

@@ -1,0 +1,26 @@
+% ********************************************************************
+% Configurações de aparência do PDF final
+
+% alterando o aspecto da cor azul
+\definecolor{blue}{RGB}{41,5,195}
+%\definecolor{apricot}{RGB}{251,206,177}
+
+% informações do PDF (METADATA)
+\hypersetup{
+%   backref=true,
+%   pagebackref=true,
+%   bookmarks=true,
+%   unicode=false,  % problem with the compiler
+  pdftitle={\UERJtitle},
+  pdfauthor={\UERJautor},
+  pdfsubject={\UERJpreambuloMetaData},
+  pdfkeywords={\chaveA}{\chaveB}{\chaveC}{\chaveD},
+  pdfproducer={\packagename},       % producer of the document
+  pdfcreator={\UERJautor},
+  colorlinks=true,       			% false: boxed links; true: colored links
+  linkcolor=black,       			% color of internal links blue
+  citecolor=black,       			% color of links to bibliography blue
+  filecolor=black,       			% color of file links magenta
+  urlcolor=black,
+  bookmarksdepth=2 %
+}
