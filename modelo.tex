@@ -1,0 +1,693 @@
+% ---------------------------------------------------------------
+% ---------------------------------------------------------------
+% Modelo de Trabalho Acadêmico utilizando classe repUERJ para
+% elaboração de teses, dissertação e trabalhos monográficos em
+% geral.
+%
+% Este arquivo está editado na codificação de caracteres UTF-8.
+%
+% As referencias estão baseadas no modelo bibtex e citação em
+% autor-data
+%
+% Este modelo foi criado por 
+% 	Dr. Luís Fernando de Oliveira
+% 	Professor Adjunto do Dep. de Física Aplicada e Termodinâmica
+% 	Instituto de Física Armando Dias Tavares
+% 	Universidade do Estado do Rio de Janeiro - UERJ
+%%%%%%%
+%  O modelo original foi criado por
+% 	Dr. Luís Fernando de Oliveira
+% 	Professor Adjunto do Dep. de Física Aplicada e Termodinâmica
+% 	Instituto de Física Armando Dias Tavares
+% 	Universidade do Estado do Rio de Janeiro - UERJ
+%
+% A classe repUERJ.cls foi criada a partir do código original 
+% disponibilizado pelo grupo CódigoLivre (coordenado por
+% Gerald Weber). Foram feitas adequações para implementação das 
+% normas de elaboração de teses e dissertações da UERJ.
+%
+% Os estilos repUERJformat.sty codificam os elementos
+% pré-textuais e pós-textuais.
+%
+% O estilo repUERJpseudocode.sty codifica a elaboração de
+% algoritmos utilizando um glossário desenvolvido por mim 
+% (Luís Fernando), o mesmo usado em meu curso de Física
+% Computacional.
+%
+% Todo este material está disponível também no meu site
+%      http://sites.google.com/site/deoliveiralf
+%
+% As normas da UERJ para elaboração de teses e dissertações 
+% pode ser obtidas no documento disponível no site
+%      http://www.bdtd.uerj.br/roteiro_uerj_web.pdf
+%
+% Agradecimentos ao NPROTEC/Rede Sirius/UERJ e à Biblioteca
+% Setorial da Física.
+
+% A presente versão é uma atualização e adaptação para as teses 
+% e dissertações desenvolvidas no 
+% Programa de Pós-Graduação em Ciências Computacionais (PPG-CCOMP) 
+% Instituto de Matemática e Estatística - IME/UERJ
+% a cargo da M.Sc. Michelle Lau.
+%
+% Modelo adaptado para o Programa de Pós-Graduação em Ciências Computacionais.
+% ---------------------------------------------------------------
+% ---------------------------------------------------------------
+%
+\documentclass[a4paper,12pt,oneside,onecolumn,final,fleqn]{repUERJ}
+% ---
+% Pacotes fundamentais 
+% ---
+\usepackage[brazil]{babel}  % adequação para o português Brasil
+\usepackage[utf8]{inputenc} % Determina a codificação utilizada
+                            % (conversão automática dos acentos)
+\usepackage{makeidx}        % Cria o índice
+\usepackage{hyperref}       % Controla a formação do índice
+\usepackage{indentfirst}    % Indenta o primeiro paragrafo de
+                            % cada seção.
+\usepackage{graphicx}       % Inclusão de gráficos
+\usepackage{subfig}
+\usepackage{multirow}
+\usepackage{amsmath,amssymb}  % pacotes matemáticos
+\usepackage[alf]{abntex2cite} % pacote para citacoes autor-data
+% \usepackage[num]{abntex2cite} % pacote para citacoes com numeracao
+% \citebrackets[]
+
+\pdfstringdefDisableCommands{\let\uppercase\relax}
+\pdfstringdefDisableCommands{\let\uline\relax}
+
+\usepackage[font=default,frame=no]{repUERJformat} % pacote para as 
+                                                  % normas da UERJ
+% ---
+% pacote auxiliar para elaboração de pseudocódigos
+% este pacote pode ser retirado caso nao se planeje
+% elaborar pseudocódigos
+% ---
+\usepackage[dots=yes]{repUERJpseudocode}
+
+\usepackage[maxfloats=25]{morefloats}
+\usepackage{array}
+\setlength\extrarowheight{2pt}
+
+% ----------------------------------------------------------------
+% Este trecho de comandos pode ser apagado
+% ----------------------------------------------------------------
+\usepackage[brazilian,hyperpageref]{backref}
+% Configurações do pacote backref
+% Usado sem a opção hyperpageref de backref
+\renewcommand{\backrefpagesname}{Citado na(s) página(s):~}
+% Texto padrão antes do número das páginas
+\renewcommand{\backref}{}
+% Define os textos da citação
+\renewcommand*{\backrefalt}[4]{
+\ifcase #1 %
+Nenhuma citação no texto.%
+\or
+Citado na página #2.%
+\else
+Citado #1 vezes nas páginas #2.%
+\fi}%
+% ----------------------------------------------------------------
+
+
+% ***************************************************************
+% Informações de autoria e institucionais
+% ***************************************************************
+
+%----------------------------------------------------------------
+% Imagens pretextuais (precisam estar no mesmo diretório deste arquivo .tex)
+%----------------------------------------------------------------
+
+\logo{logo_uerj_cinza.png}
+\marcadagua{marcadagua_uerj_cinza.png}{1}{160}{255}
+
+%----------------------------------------------------------------
+% Informações da instituição
+%----------------------------------------------------------------
+
+\instituicao{Universidade do Estado do Rio de Janeiro}
+            {Centro de Tecnologia e Ciências} 
+            {Instituto de Matemática e Estatística} 
+            %{Patrono} 
+
+%----------------------------------------------------------------
+% Informações da autoria do documento
+%----------------------------------------------------------------
+
+% A seguir, devem ser atualizadas as informações particulares do  trabalho, autor(a) e orientação; assim como escolher se está se elaborando uma tese de doutorado ou uma dissertação de mestrado.
+
+\autor{Nome}{Sobrenome}
+      {Iniciais do nome} % iniciais do nome
+
+\titulo{Título do trabalho}
+\title{Título do trabalho em inglês}
+
+% se não for usar a quarta palavra chave, deixar o campo vazio: {}
+\palavraschaves{Primeira palavra-chave}
+               {Segunda palavra-chave}
+               {Terceira palavra-chave}
+               {Quarta palavra-chave (opcional) ou vazio}
+
+\keywords{First keyword}
+         {Second keyword}
+         {Third keyword}
+         {Fourth keyword or empty}
+
+\orientador{Cargo Titulação} 
+           {Nome}{Sobrenome} 
+           {Unidade -- UERJ} 
+
+\coorientador{Cargo Titulação} 
+             {Nome}{Sobrenome} 
+             {Unidade -- Instituição} 
+
+%----------------------------------------------------------------
+% Grau pretendido (Doutor, Mestre, Bacharel, Licenciado) e Curso
+%----------------------------------------------------------------
+
+% Para dissertação de mestrado utilizar o \grau{Mestre} e comentar  o \grau{Doutor}.
+\grau{Mestre} 
+
+% Para tese de doutorado utilizar o \grau{Doutor} e comentar o \grau{Mestre}.
+% \grau{Doutor}
+
+\curso{Ciências Computacionais}
+
+
+%----------------------------------------------------------------
+% Informações adicionais (local, data e paginas)
+%----------------------------------------------------------------
+
+\local{Rio de Janeiro} 
+\data{dd}{mês}{aaaa} 
+
+% ***************************************************************
+% Configurações de aparência do PDF final
+% ***************************************************************
+
+% alterando o aspecto da cor azul
+%\definecolor{blue}{RGB}{41,5,195}
+%\definecolor{apricot}{RGB}{251,206,177}
+
+% informações do PDF
+\hypersetup{
+  unicode=false,
+  pdftitle={\UERJtitulo},
+  pdfauthor={\UERJautor},
+  pdfsubject={\UERJpreambulo},
+  pdfkeywords={PALAVRAS-CHAVES:}{ \chaveA}{ \chaveB}{ \chaveC}{ \chaveD},
+  pdfproducer={\packagename}, % producer of the document
+  colorlinks=true,   % false: boxed links; true: colored links
+  linkcolor=black,   % color of internal links blue
+  citecolor=black,   % color of links to bibliography blue
+  filecolor=black,   % color of file links magenta
+  urlcolor=black,
+  bookmarksdepth=4,
+%   backref=true,
+%   pagebackref=true,
+%   bookmarks=true,
+}
+
+% ***************************************************************
+% Índice remissivo
+% ***************************************************************
+
+% \makeindex % compila o índice; se não for usar, comentar
+
+% ***************************************************************
+% Fim do preâmbulo
+% ***************************************************************
+
+% ----------------------------------------------------------
+\begin{document}
+% ----------------------------------------------------------
+
+% ----------------------------------------------------------
+% ELEMENTOS PRE-TEXTUAIS
+% ----------------------------------------------------------
+
+\frontmatter % inicia a área dos elementos pré-textuais
+
+% O tipo de documento (tese ou dissertação) deve ser definido após a linha 165
+
+% ----------------------------------------------------------
+% Capa e a folha de rosto
+% ----------------------------------------------------------
+
+\capa
+\folhaderosto
+
+% ----------------------------------------------------------
+% Inserir a ficha catalográfica
+% ----------------------------------------------------------
+
+% A biblioteca deverá providenciar a ficha catalográfica. 
+% Salve a ficha no formato PDF. Use o nome do arquivo PDF 
+% como argumento do comando. 
+% Exemplo: ficha catalográfica no arquivo 'ficha.pdf'
+%     \fichacatalografica{ficha.pdf}
+%
+% Enquanto não possuir a ficha catalográfica, use o comando sem
+% argumentos.
+% ---
+
+\fichacatalografica{}
+
+
+% ----------------------------------------------------------
+% Folha de aprovação
+% ----------------------------------------------------------
+
+\begin{folhadeaprovacao}
+  \assinatura{Cargo Título Nome Completo}
+             {Unidade -- Instituição}
+  \assinatura{Cargo Título Nome Completo}
+             {Unidade -- Instituição}
+  \assinatura{Cargo Título Nome Completo}
+             {Unidade -- Instituição}
+  \assinatura{Cargo Título Nome Completo}
+             {Unidade -- Instituição}
+\end{folhadeaprovacao}
+
+
+% ----------------------------------------------------------
+% Dedicatória
+% ----------------------------------------------------------
+
+\pretextualchapter{Dedicatória}
+\vfill
+Texto da dedicatória (opcional).
+
+
+% ----------------------------------------------------------
+% Agradecimentos
+% ----------------------------------------------------------
+
+\pretextualchapter{Agradecimentos}
+
+Texto de agradecimento (opcional).
+
+
+% ----------------------------------------------------------
+% Epigrafe (opcional)
+% ----------------------------------------------------------
+
+\pretextualchapter{}
+  \vfill
+  \begin{flushright}
+ Pensamento, reflexão (opcional). \\  %citação sem aspas   
+    \textit{autor}
+  \end{flushright}
+
+
+% ----------------------------------------------------------
+% RESUMO
+% ----------------------------------------------------------
+
+\pretextualchapter{Resumo}
+\referencia % linha em branco depois
+
+
+Texto do resumo em português.
+
+
+\imprimirchaves % linha em branco antes
+
+% ----------------------------------------------------------
+% Abstract
+% ----------------------------------------------------------
+
+\pretextualchapter{Abstract}
+\reference % linha em branco depois
+
+
+Texto do resumo em inglês.
+
+
+\printkeys % linha em branco antes
+
+% ----------------------------------------------------------
+% Listas de ilustrações e tabelas
+% ----------------------------------------------------------
+
+\listadefiguras    %\begin{figure}{largura}...\end{figure}
+\listadetabelas    %\begin{table}{largura}...\end{table}
+% \listadegraficos   %\begin{graph}{largura}...\end{graph}
+
+% ----------------------------------------------------------
+% Outras listas
+% ----------------------------------------------------------
+
+\listadealgoritmos % opcional %\begin{algorithm}...\end{algorithm}
+
+% ----------------------------------------------------------
+% Lista de abreviaturas e siglas (opcional)
+% ----------------------------------------------------------
+
+\pretextualchapter{Lista de abreviaturas e siglas}
+    \abreviatura{sigla 1}{por extenso}
+    \abreviatura{sigla 2}{por extenso}
+    \abreviatura{sigla 3}{por extenso}
+
+% ----------------------------------------------------------
+% Lista de simbolos (opcional)
+% ----------------------------------------------------------
+
+\pretextualchapter{Lista de símbolos}
+    \simbolo{$simbolo 1$}{significado e/ou valor}
+    \simbolo{$simbolo 2$}{significado e/ou valor}
+    \simbolo{$simbolo 3$}{significado e/ou valor}
+
+% ----------------------------------------------------------
+% Sumario
+% ----------------------------------------------------------
+
+\sumario
+
+% ----------------------------------------------------------
+% ELEMENTOS TEXTUAIS
+% ----------------------------------------------------------
+
+\mainmatter % inicia a área de desenvolvimento do conteúdo
+
+%================================================================
+\chapter*{Introdução} % Não deve ser numerado.
+%================================================================
+
+No âmbito da comunidade acadêmica, a importância de estabelecer diretrizes, padrões e normas que constituem uma ação fundamental para garantir a localização e a recuperação do conhecimento produzido é reconhecida principalmente por ser a Universidade locus permanente de produção científica~\cite{bib:roteiro}.
+
+As teses e dissertações da Universidade do Estado do Rio de Janeiro, destacam-se pela qualidade do conteúdo e pela estrutura da apresentação. Organizar essa estrutura e padronizar a apresentação são processos que dependem de atualização constante devido às novas Tecnologias de Informação e Comunicação (TICs), da produção de informação que utiliza esses recursos e, também, das normas da Associação Brasileira de Normas Técnicas (ABNT)~\cite{bib:roteiro}.
+
+Este modelo tem por objetivo padronizar os trabalhos realizados no Programa de Pós-Graduação em Ciências Computacionais (PPG-CCOMP). O modelo utilizado foi criado por Dr. Luís Fernando de Oliveira, professor adjunto do Dep. de Física Aplicada e Termodinâmica da Universidade do Estado do Rio de Janeiro e, adaptado para os cursos de Mestrado e Doutorado do PPG-CCOMP por M.Sc. Michelle Lau.
+
+Foram introduzidas algumas regras gerais para apresentação no próximo capítulo. Para mais detalhes sobre a apresentação, consultar o Roteiro para apresentação das teses e dissertações da Universidade do Estado do Rio de Janeiro através do link: \url{http://www.bdtd.uerj.br/roteiro_uerj_web.pdf}.
+
+
+%================================================================
+\chapter{Regras Gerais de Apresentação}
+%================================================================
+
+São as regras que definem como a parte gráfica do documento
+deve ser apresentada, incluindo as ilustrações, as equações e as abreviaturas e siglas que porventura existam.
+
+
+%----------------------------------------------------------------
+\section{Abreviaturas e siglas}
+%----------------------------------------------------------------
+
+São utilizadas com o objetivo de se evitar a repetição de palavras ou de expressões que aparecem com frequência no texto. Quando as abreviaturas ou siglas forem citadas no texto pela primeira vez, devem aparecer entre parênteses após o seu significado por extenso.
+
+\textbf{Exemplo:} A Universidade do Estado do Rio de Janeiro (UERJ) integra o consórcio da Biblioteca Digital Brasileira de Teses e Dissertações (BDTD). Assim, a UERJ faz parte da BDTD nacional, coordenada pelo Instituto Brasileiro de Informação em Ciência e Tecnologia (IBICT).
+
+
+%----------------------------------------------------------------
+\section{Equações e fórmulas}
+%----------------------------------------------------------------
+
+As equações e fórmulas devem aparecer destacadas no texto, alinhadas na margem esquerda, numeradas em algarismos arábicos, estes
+alinhados na margem direita e entre parênteses. 
+
+Alguns exemplos usando ambientes para inserir equações matemáticas:
+
+\begin{align}
+    & X_{t+1} = kx_t\left(1-x_t\right) \notag \\
+    & E = mc^2\\
+    & F = G \dfrac{m_1 m_2}{d^2}
+\end{align}
+
+\begin{gather}
+    f(x)=\left\{\begin{aligned}
+    & y_{ij} = 0\\
+    & x = h + v
+\end{aligned}\right.
+\end{gather}
+
+\begin{equation} 
+    H = - \sum p(x) \log p(x)
+\end{equation}
+
+\begin{equation*}
+    \nabla \times H = \dfrac{1}{c}\dfrac{\partial E}{\partial t},~~ \nabla\cdot H = 0
+\end{equation*}
+
+%----------------------------------------------------------------
+\section{Ilustrações}
+%----------------------------------------------------------------
+
+Têm por objetivo exemplificar e/ou esclarecer o assunto que está
+sendo abordado. Deve-se evitar o uso de ilustrações que não tenham sido objeto do trabalho.
+
+\textbf{Exemplos:}
+
+\begin{verbatim}
+\begin{figure}[htb]{14cm}
+\caption{Aqui entra o título da figura -- deve ser curto e objetivo}
+\label{fig:fig1}
+\fbox{\includegraphics[width=0.45\hsize]{logo_uerj_cinza.png}}%
+\legend{Aqui entra a legenda da figura. Deve ser simples e sucinta
+mas que garanta a compreensão da ilustração.
+Qualquer explicação mais longa deve estar no corpo do texto.}
+\source{Citação da fonte ou `O autor/A autora, ano'.}
+\end{figure}
+\end{verbatim}
+
+O código acima produz a Figura~\ref{fig:fig1}.
+
+\begin{figure}[htb]{14cm}
+\caption{Aqui entra o título da figura -- deve ser curto e objetivo}\label{fig:fig1}
+\fbox{\includegraphics[width=0.45\hsize]{logo_uerj_cinza.png}}%
+ \legend{Aqui entra a legenda da figura. Deve ser simples e sucinta mas que garanta a compreensão da ilustração.
+Qualquer explicação mais longa deve estar no corpo do texto.}
+\source{Citação da fonte ou `O autor/A autora, ano'.}
+\end{figure}
+
+Com o comando $\backslash$\texttt{subfloat[][]}\{\texttt{...}\} dentro do $\backslash$\texttt{begin}\{\texttt{figure}\}, é possível organizar mais de uma imagem no mesmo título. Cada ``subimagem'' será referenciada com uma letra a começar com \texttt{(a)}. Veja as figuras \ref{subrotulo1}, \ref{subrotulo2} e \ref{subrotulo3}.
+\begin{verbatim}
+\begin{figure}[htb]{16cm}
+  \caption{Apresentações do logo da UERJ.} 
+  \label{outro.rotulo}
+  \subfloat[][]{\label{subrotulo1}%
+    \fbox{\includegraphics[width=0.45\hsize]
+            {logo_uerj_cinza.png}}}\hfill
+  \subfloat[][]{\label{subrotulo2}%
+    \fbox{\includegraphics[width=0.45\hsize]
+            {marcadagua_uerj_cinza.png}}}\\
+  \subfloat[][]{\label{subrotulo3}%
+    \fbox{\includegraphics[width=0.45\hsize]
+            {logo_uerj_cor.jpg}}}\hfill
+  \legend{Logomarca da UERJ em diferentes 
+    apresentações de cor: \subref{subrotulo1} 
+    em tons de cinza (a partir da imagem colorida);
+    \subref{subrotulo2} como marga d'água (a partir 
+    da imagem preto e branco; \subref{subrotulo3} 
+    colorido.}
+  \source{\citeauthor{bib:logomarca}, 
+          \citeyear{bib:logomarca}; 
+          \citeauthor{bib:logomarca}, 
+          \citeyear{bib:logomarca}.}
+\end{figure}
+\end{verbatim}
+
+Não vale a pena brigar com o \LaTeX\ para posicionar a figura onde você quer. Normalmente, o \LaTeX\ colocará a figura na página seguinte, salvo exceções. Isto tem  a ver com a proporção de texto e figura presentes na página. Quando a figura ocupa uma área da página muito superior ao correspondente de texto, o \LaTeX\ deixa a figura isolada em uma nova página como, por exemplo, a Figura~\ref{fig:outro.rotulo}.
+
+\begin{figure}[htb]{16cm}
+  \caption{Apresentações do logo da UERJ.} 
+  \label{fig:outro.rotulo}
+  \subfloat[][]{\label{subrotulo1}%
+    \fbox{\includegraphics[width=0.45\hsize]
+            {logo_uerj_cinza.png}}}\hfill
+  \subfloat[][]{\label{subrotulo2}%
+    \fbox{\includegraphics[width=0.45\hsize]
+            {marcadagua_uerj_cinza.png}}}\\
+  \subfloat[][]{\label{subrotulo3}%
+    \fbox{\includegraphics[width=0.45\hsize]
+            {logo_uerj_cor.jpg}}}\hfill
+  \legend{Logomarca da UERJ em diferentes 
+    apresentações de cor: \subref{subrotulo1} 
+    em tons de cinza (a partir da imagem colorida);
+    \subref{subrotulo2} como marga d'água (a partir 
+    da imagem preto e branco; \subref{subrotulo3} 
+    colorido.}
+  \source{\citeauthor{bib:logomarca}, 
+          \citeyear{bib:logomarca}; 
+          \citeauthor{bib:logomarca}, 
+          \citeyear{bib:logomarca}.}
+\end{figure}
+
+
+%----------------------------------------------------------------
+\section{Tabelas}
+%----------------------------------------------------------------
+
+Apresentam apenas informações estatísticas. As tabelas seguem as mesmas regras das ilustrações quanto a identificação, apresentação gráfica, localização e disposição.
+
+\begin{table}[htb]{16cm}
+    \caption{\protect Algumas disciplinas do Programa de Pós-Graduação em Ciências Computacionais.}
+    \label{tab:casos_sarampo}
+    \hfill\begin{tabular}{l|c}
+        Disciplina & Grupo \\
+        \hline 
+         Álgebra Linear: Aspectos Teóricos e Computacionais & I\\
+         Algoritmos & I\\
+         Programação Paralela e Distribuída & II\\
+         Probabilidade e Estatística & II\\
+         Redes Neuronais & III\\
+         Visão Computacional & III\\
+         Estudo Dirigido I & IV
+    \end{tabular}\hfill
+    \legend{Algumas das disciplinas ofertadas pelo Programa de Pós-Graduação em Ciências Computacionais e o grupo ao qual pertencem.} 
+    \source{O autor, 2021.}
+\end{table}
+
+
+%----------------------------------------------------------------
+\section{Referências}
+%----------------------------------------------------------------
+
+No arquivo \textit{exemplos.bib} podem-se observar alguns exemplos de como formatar as referências a serem utilizadas no trabalho. 
+
+Para obter mais detalhes, acessar o Roteiro para apresentação das teses e dissertações da Universidade do Estado do Rio de Janeiro através do link: \url{http://www.bdtd.uerj.br/roteiro_uerj_web.pdf}.
+
+%================================================================
+\chapter*{Conclusão} %não deve ser numerado
+%================================================================
+
+Texto da conclusão.
+
+
+
+
+% ----------------------------------------------------------------
+% ELEMENTOS POS-TEXTUAIS
+% ----------------------------------------------------------------
+
+\backmatter % inicia a área dos elementos pós-textuais
+
+
+%===========================================================
+% Referencias via BibTeX
+%===========================================================
+
+\citeoption{abnt-options4}
+\bibliography{abnt-options4,bibliografia}
+% \bibliographystyle{abntex2-num}
+% \bibliography{bibliografia}
+
+%===========================================================
+\postextualchapter*{Glossário} % elemento opcional
+%===========================================================
+
+\definicao{termo 1}{significado}
+\definicao{termo 2}{significado}
+\definicao{termo 3}{significado}
+
+% ----------------------------------------------------------------
+% Apêndices (opcionais)
+% ----------------------------------------------------------------
+
+\appendix % inicia os apêndices
+
+%===========================================================
+\postextualchapter{Primeiro apêndice}
+%===========================================================
+
+Os apêndices são elementos opcionais, complementares, de caráter informativo, elaborados pelo próprio autor, como, por exemplo, questionários, formulários, textos etc. Sua exclusão não prejudica o conteúdo do trabalho. Caso haja somente um apêndice, este não deve ser numerado. Para isso, é necessário comentar a linha $565$ do arquivo repUERJ.cls e retirar o comentário da linha $566$ do mesmo arquivo.
+
+% ----------------------------------------------------------
+\section{Primeira seção}
+% ----------------------------------------------------------
+
+Texto da primeira seção.
+
+% ----------------------------------------------------------
+\subsection{Primeira subseção}
+% ----------------------------------------------------------
+
+Texto da primeira subseção.
+
+% ----------------------------------------------------------
+\subsubsection{Primeira subsubseção}
+% ----------------------------------------------------------
+
+Texto da primeira subsubseção.
+
+
+%===========================================================
+\postextualchapter{Segundo apêndice}
+%===========================================================
+
+% ----------------------------------------------------------
+\section{Primeira seção}
+% ----------------------------------------------------------
+
+Texto da primeira seção.
+
+% ----------------------------------------------------------
+\subsection{Primeira subseção}
+% ----------------------------------------------------------
+
+Texto da primeira subseção.
+
+% ----------------------------------------------------------
+\subsubsection{Primeira subsubseção}
+% ----------------------------------------------------------
+
+Texto da primeira subsubseção.
+
+% ----------------------------------------------------------------
+% Anexos (opcionais)
+% ----------------------------------------------------------------
+
+\annex % inicia os anexos
+
+%===========================================================
+\postextualchapter{Primeiro anexo}
+%===========================================================
+
+Os anexos são elementos opcionais, complementares, de caráter ilustrativo e/ou comprobatório do texto. O anexo difere do apêndice por não ser elaborado pelo autor da tese ou dissertação. Caso haja somente um anexo, este não deve ser numerado, como ocorre no apêndice.
+Caso haja mais de um anexo, é necessário comentar a linha $575$ do arquivo repUERJ.cls e retirar o comentário da linha $574$ do mesmo arquivo.
+
+% ----------------------------------------------------------
+\section{Primeira seção}
+% ----------------------------------------------------------
+
+Texto da primeira seção.
+
+% ----------------------------------------------------------
+\subsection{Primeira subseção}
+% ----------------------------------------------------------
+
+Texto da primeira subseção.
+
+% ----------------------------------------------------------
+\subsubsection{Primeira subsubseção}
+% ----------------------------------------------------------
+
+Texto da primeira subsubseção.
+
+
+
+% %===========================================================
+% \postextualchapter{Segundo anexo}
+% %===========================================================
+
+% % ----------------------------------------------------------
+% \section{Primeira seção}
+% % ----------------------------------------------------------
+
+% Texto da primeira seção.
+
+% % ----------------------------------------------------------
+% \subsection{Primeira subseção}
+% % ----------------------------------------------------------
+
+% Texto da primeira subseção.
+
+% % ----------------------------------------------------------
+% \subsubsection{Primeira subsubseção}
+% % ----------------------------------------------------------
+
+% Texto da primeira subsubseção.
+
+
+\end{document}
